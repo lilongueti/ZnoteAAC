@@ -30,13 +30,13 @@
 	// ------------------------ \\
 
 	// phpmyadmin username for OT server: (DONT USE "root" if you are hosting to public).
-	$config['sqlUser'] = 'tfs13';
+	$config['sqlUser'] = 'root';
 
 	// phpmyadmin password for OT server:
-	$config['sqlPassword'] = 'tfs13';
+	$config['sqlPassword'] = 'esmmp5';
 
 	// The database name to connect to. (This is usually same as username).
-	$config['sqlDatabase'] = 'tfs13';
+	$config['sqlDatabase'] = 'server';
 
 	// Hostname is usually localhost or 127.0.0.1.
 	$config['sqlHost'] = '127.0.0.1';
@@ -307,6 +307,17 @@
 		)
 	);
 
+	$config['pets'] = array(
+		1 => array(
+			'name' => 'Cat',
+			'fromVoc' => false
+		),
+		2 => array(
+			'name' => 'Dog',
+			'fromVoc' => false
+		)
+		);
+
 	/* Vocation stat gains per level
 		- Ordered by vocation ID
 		- Currently used for admin_skills page. */
@@ -439,6 +450,8 @@
 
 	// Available character vocation users can choose (specify vocation ID).
 	$config['available_vocations'] = array(1, 2, 3, 4);
+	$config['available_pets'] = array(1, 2);
+	
 
 	// Available towns (specify town ids, etc: (1, 2, 3); to display 3 town options (town id 1, 2 and 3).
 	// Town IDs are the ones from $config['towns'] array

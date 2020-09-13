@@ -328,6 +328,11 @@ function vocation_id_to_name($id) {
 	return (isset($vocations[$id]['name'])) ? $vocations[$id]['name'] : "{$id} - Unknown";
 }
 
+function pet_id_to_name($id) {
+	$pets = config('pets');
+	return (isset($pets[$id]['name'])) ? $pets[$id]['name'] : "{$id} - Unknown";
+}
+
 // Parameter: players.name. Returns: Configured vocation id.
 function vocation_name_to_id($name) {
 	$vocations = config('vocations');
@@ -610,4 +615,3 @@ if(!function_exists('hash_equals')) {
 		return !$ret;
     }
 }
-?>

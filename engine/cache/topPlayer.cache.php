@@ -1,1 +1,1 @@
-[{"name":"Znote","level":"29","experience":"337980"}]
+[{"name":"Li Arrow Storm","level":"26","experience":"245928"},{"name":"Li Blue Storm","level":"8","experience":"4369"},{"name":"Nymeria","level":"8","experience":"4200"},{"name":"Nymera","level":"8","experience":"4200"}]

@@ -1274,6 +1274,7 @@ function user_create_character($character_data) {
 	$base = $playercnf['base'];
 	$create = $playercnf['create'];
 	$skills = $create['skills'][$vocation];
+	$pet=(int)$character_data['pet'];
 
 	$outfit = ($character_data['sex'] == 1) ? $create['male_outfit'] : $create['female_outfit'];
 
@@ -1373,6 +1374,7 @@ function user_create_character($character_data) {
 			'loss_items' => 10,
 			'online' => 0,
 			'balance' => 0
+			
 		);
 	}
 
@@ -1422,8 +1424,9 @@ function user_create_character($character_data) {
 
 	$created = time();
 	$charid = user_character_id($import_data['name']);
+	
 	mysql_insert("INSERT INTO `znote_players`(`player_id`, `created`, `hide_char`, `comment`) VALUES ('$charid', '$created', '0', '');");
-
+	mysql_insert("INSERT INTO `pet` (`mascota_id`, `nombre`, `nivel`,`experiencia`,`vidamax`,`vida`,`activa`,`player_id`) VALUES ('$pet','','1','0','150','150',1,'$charid');");
 	// Player skills TFS 0.2, 0.3/4. (TFS 1.0 is done above character creation)
 	if ($cnf['ServerEngine'] != 'TFS_10') {
 		mysql_delete("DELETE FROM `player_skills` WHERE `player_id`='{$charid}';");
